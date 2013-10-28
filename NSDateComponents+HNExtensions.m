@@ -123,4 +123,8 @@
 
 #endif
 
+- (NSString *)localizedFormattedString {
+    return nil;
+}
+
 @end
