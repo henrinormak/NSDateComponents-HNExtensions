@@ -24,6 +24,7 @@
 //
 
 #import "NSDateComponents+HNExtensions.h"
+#define  NSDateComponentsHNExtensionsString(key, comment) NSLocalizedStringFromTable(key, NSDateComponentsHNExtensionsStringsTable, comment)
 
 @implementation NSDateComponents (HNExtensions)
 
@@ -123,8 +124,74 @@
 
 #endif
 
-- (NSString *)localizedFormattedString {
-    return nil;
++ (NSDateComponents *)components:(NSCalendarUnit)unit fromTimeInterval:(NSTimeInterval)interval {
+    NSDate *start = [NSDate date];
+    NSDate *end = [start dateByAddingTimeInterval:interval];
+    return [[NSCalendar autoupdatingCurrentCalendar] components:unit fromDate:start toDate:end options:0];
+}
+
+// Helper to get the suitable unit string
+- (NSString *)stringForComponent:(NSCalendarUnit)unit count:(NSInteger)count {
+    if (count == 0)
+        return nil;
+    
+    NSString *key = nil;
+    switch (unit) {
+        case NSCalendarUnitYear:
+            key = @"year";
+            break;
+        case NSMonthCalendarUnit:
+            key = @"month";
+            break;
+        case NSWeekCalendarUnit:
+            key = @"week";
+            break;
+        case NSDayCalendarUnit:
+            key = @"day";
+            break;
+        case NSHourCalendarUnit:
+            key = @"hour";
+            break;
+        case NSMinuteCalendarUnit:
+            key = @"minute";
+            break;
+        case NSSecondCalendarUnit:
+            key = @"second";
+            break;
+        default:
+            break;
+    }
+    
+    NSString *testKey = [NSString stringWithFormat:@"%@##%lu", key, labs(count)];
+    NSString *value = NSDateComponentsHNExtensionsString(testKey, nil);
+    
+    if (labs(count) > 1 && [value isEqualToString:testKey]) {
+        testKey = [NSString stringWithFormat:@"%@##plural", key];
+        value = NSDateComponentsHNExtensionsString(testKey, nil);
+    }
+    
+    if ([value isEqualToString:testKey]) {
+        value = NSDateComponentsHNExtensionsString(key, nil);
+    }
+    
+    return [NSString stringWithFormat:@"%i %@", count, value];
+}
+
+- (NSString *)localizedStringFromUnit:(NSCalendarUnit)fromUnit toUnit:(NSCalendarUnit)toUnit {
+    toUnit = MIN(NSCalendarUnitSecond, MAX(NSCalendarUnitYear, toUnit));
+    fromUnit = MAX(NSCalendarUnitYear, MIN(toUnit, fromUnit));
+    
+    NSMutableArray *components = [NSMutableArray array];
+    NSCalendarUnit unit = fromUnit;
+    while (unit <= toUnit) {
+        NSString *component = [self stringForComponent:unit count:[self valueForComponent:unit]];
+        if ([component length] > 0)
+            [components addObject:component];
+        
+        unit = (unit << 1);
+    }
+    
+    return [components componentsJoinedByString:@" "];
 }
 
 @end

@@ -39,9 +39,15 @@
 
 #endif
 
+// Creating date components from a time interval
+// Uses system calendar (i.e NSCalendar -autoupdatingCurrentCalendar)
++ (NSDateComponents *)components:(NSCalendarUnit)unit fromTimeInterval:(NSTimeInterval)interval NS_AVAILABLE(10_5, 2_0);;
+
+
 // Returns a string localized to the format of "x hours x minutes"
-// From year to second (largest to smallest)
-// Uses strings from the table specified by
-- (NSString *)localizedFormattedString;
+// Upper bound (from) is bound to year, lower bound (to) is bound to second
+// fromUnit <= toUnit must be true, will be enforced by raising fromUnit
+// Uses strings from the table specified by NSDateComponentsHNExtensionsStringsTable
+- (NSString *)localizedStringFromUnit:(NSCalendarUnit)fromUnit toUnit:(NSCalendarUnit)toUnit;
 
 @end

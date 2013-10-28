@@ -1,6 +1,12 @@
 /* 
  NSDateComponents+HNExtensions.strings
  
+ The translation follows few simple rules
+ 1) "key" is used as key for the singular form and as the final fallback
+ 2) "key##plural" is used for values above 1 as the first fallback (if 3 is not there)
+ 3) "key##{value}" is the first key that is checked, for example "minute##3"
+    can be the key for "minutes" as that goes along with count 3
+ 
  The MIT License (MIT)
 
  Copyright (c) 2013 Henri Normak
@@ -24,3 +30,44 @@
  
 */
 
+/* Year, singular */
+"year" = "year";
+
+/* Year, plural */
+"year##plural" = "years";
+
+/* Month, singular */
+"month" = "month";
+
+/* Month, plural */
+"month##plural" = "month";
+
+/* Week, singular */
+"week" = "week";
+
+/* Week, plural */
+"week##plural" = "weeks";
+
+/* Day, singular */
+"day" = "day";
+
+/* Day, plural */
+"day##plural" = "days";
+
+/* Hour, singular */
+"hour" = "hour";
+
+/* Hour, plural */
+"hour##plural" = "hours";
+
+/* Minute, singular */
+"minute" = "minute";
+
+/* Minute, plural */
+"minute##plural" = "minutes";
+
+/* Second, singular */
+"second" = "second";
+
+/* Second, plural */
+"second##plural" = "seconds";
