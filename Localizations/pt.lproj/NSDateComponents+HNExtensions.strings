@@ -5,10 +5,12 @@
  1) "key" is used as key for the singular form and as the final fallback
  2) "key##plural" is used for values above 1 as the first fallback (if 3 is not there)
  3) "key##{value}" is the first key that is checked, for example "minute##3"
-    can be the key for "minutes" as that goes along with count 3
+ can be the key for "minutes" as that goes along with count 3
  
- The MIT License (MIT)
+ Translated by @vcarabineiro (Twitter handle)
 
+ The MIT License (MIT)
+ 
  Copyright (c) 2013 Henri Normak
  
  Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -31,43 +33,43 @@
 */
 
 /* Year, singular */
-"year" = "year";
+"year" = "anos";
 
 /* Year, plural */
-"year##plural" = "years";
+"year##plural" = "anos";
 
 /* Month, singular */
-"month" = "month";
+"month" = "mês";
 
 /* Month, plural */
-"month##plural" = "month";
+"month##plural" = "meses";
 
 /* Week, singular */
-"week" = "week";
+"week" = "semana";
 
 /* Week, plural */
-"week##plural" = "weeks";
+"week##plural" = "semanas";
 
 /* Day, singular */
-"day" = "day";
+"day" = "dia";
 
 /* Day, plural */
-"day##plural" = "days";
+"day##plural" = "dias";
 
 /* Hour, singular */
-"hour" = "hour";
+"hour" = "hora";
 
 /* Hour, plural */
-"hour##plural" = "hours";
+"hour##plural" = "horas";
 
 /* Minute, singular */
-"minute" = "minute";
+"minute" = "minuto";
 
 /* Minute, plural */
-"minute##plural" = "minutes";
+"minute##plural" = "minutos";
 
 /* Second, singular */
-"second" = "second";
+"second" = "segundo";
 
 /* Second, plural */
-"second##plural" = "seconds";
+"second##plural" = "segundos";

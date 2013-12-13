@@ -5,7 +5,9 @@
  1) "key" is used as key for the singular form and as the final fallback
  2) "key##plural" is used for values above 1 as the first fallback (if 3 is not there)
  3) "key##{value}" is the first key that is checked, for example "minute##3"
-    can be the key for "minutes" as that goes along with count 3
+ can be the key for "minutes" as that goes along with count 3
+
+ Translated by @vcarabineiro (Twitter handle)
  
  The MIT License (MIT)
 
@@ -31,43 +33,43 @@
 */
 
 /* Year, singular */
-"year" = "year";
+"year" = "anno";
 
 /* Year, plural */
-"year##plural" = "years";
+"year##plural" = "anni";
 
 /* Month, singular */
-"month" = "month";
+"month" = "mese";
 
 /* Month, plural */
-"month##plural" = "month";
+"month##plural" = "mesi";
 
 /* Week, singular */
-"week" = "week";
+"week" = "settimana";
 
 /* Week, plural */
-"week##plural" = "weeks";
+"week##plural" = "settimane";
 
 /* Day, singular */
-"day" = "day";
+"day" = "giorno";
 
 /* Day, plural */
-"day##plural" = "days";
+"day##plural" = "iorni";
 
 /* Hour, singular */
-"hour" = "hour";
+"hour" = "ora";
 
 /* Hour, plural */
-"hour##plural" = "hours";
+"hour##plural" = "ore";
 
 /* Minute, singular */
-"minute" = "minute";
+"minute" = "minuto";
 
 /* Minute, plural */
-"minute##plural" = "minutes";
+"minute##plural" = "minuti";
 
 /* Second, singular */
-"second" = "second";
+"second" = "secondi";
 
 /* Second, plural */
-"second##plural" = "seconds";
+"second##plural" = "secondi";
