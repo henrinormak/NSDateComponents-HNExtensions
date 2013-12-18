@@ -186,7 +186,7 @@
         value = NSDateComponentsHNExtensionsString(key, nil);
     }
     
-    return [NSString stringWithFormat:@"%i %@", count, value];
+    return [NSString stringWithFormat:@"%li %@", (long)count, value];
 }
 
 - (NSString *)localizedStringFromUnit:(NSCalendarUnit)fromUnit toUnit:(NSCalendarUnit)toUnit {
