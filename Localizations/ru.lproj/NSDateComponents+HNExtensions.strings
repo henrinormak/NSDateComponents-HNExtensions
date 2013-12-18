@@ -3,9 +3,13 @@
  
  The translation follows few simple rules
  1) "key" is used as key for the singular form and as the final fallback
- 2) "key##plural" is used for values above 1 as the first fallback (if 3 is not there)
+ 2) "key##plural" is used for values above 1 as the first fallback (if 3 or 4 are not there)
+ 3) "key##x{value}" is used for values above 1 with the results of number % 10,
+ i.e the last digit of the number, for example with count 21 minutes, this key would be "minute##x1"
  3) "key##{value}" is the first key that is checked, for example "minute##3"
-    can be the key for "minutes" as that goes along with count 3
+ can be the key for "minutes" as that goes along with count 3
+ 
+ Translated by Dmitri Kalinaitsev
  
  The MIT License (MIT)
 
@@ -31,43 +35,127 @@
 */
 
 /* Year, singular */
-"year" = "year";
+"year" = "год";
 
 /* Year, plural */
-"year##plural" = "years";
+"year##plural" = "лет";
+
+/* Year, ending in 1 */
+"year##x1" = "год";
+
+/* Year, ending in 2 */
+"year##x2" = "года";
+
+/* Year, ending in 3 */
+"year##x3" = "года";
+
+/* Year, ending in 4 */
+"year##x4" = "года";
 
 /* Month, singular */
-"month" = "month";
+"month" = "месяц";
 
 /* Month, plural */
-"month##plural" = "month";
+"month##plural" = "месяцев";
+
+/* Month, ending in 1 */
+"month##x1" = "месяц";
+
+/* Month, ending in 2 */
+"month##x2" = "месяца";
+
+/* Month, ending in 3 */
+"month##x3" = "месяца";
+
+/* Month, ending in 4 */
+"month##x4" = "месяца";
 
 /* Week, singular */
-"week" = "week";
+"week" = "неделя";
 
 /* Week, plural */
-"week##plural" = "weeks";
+"week##plural" = "недель";
+
+/* Week, ending in 1 */
+"week##x1" = "неделя";
+
+/* Week, ending in 2 */
+"week##x2" = "недели";
+
+/* Week, ending in 3 */
+"week##x3" = "недели";
+
+/* Week, ending in 4 */
+"week##x4" = "недели";
 
 /* Day, singular */
-"day" = "day";
+"day" = "день";
 
 /* Day, plural */
-"day##plural" = "days";
+"day##plural" = "дней";
+
+/* Day, ending in 1 */
+"day##x1" = "день";
+
+/* Day, ending in 2 */
+"day##x2" = "дня";
+
+/* Day, ending in 3 */
+"day##x3" = "дня";
+
+/* Day, ending in 4 */
+"day##x4" = "дня";
 
 /* Hour, singular */
-"hour" = "hour";
+"hour" = "час";
 
 /* Hour, plural */
-"hour##plural" = "hours";
+"hour##plural" = "часов";
+
+/* Hour, ending in 1 */
+"hour##x1" = "часa";
+
+/* Hour, ending in 2 */
+"hour##x2" = "часa";
+
+/* Hour, ending in 3 */
+"hour##x3" = "часa";
+
+/* Hour, ending in 4 */
+"hour##x4" = "часa";
 
 /* Minute, singular */
-"minute" = "minute";
+"minute" = "минута";
 
 /* Minute, plural */
-"minute##plural" = "minutes";
+"minute##plural" = "минут";
+
+/* Minute, ending in 1 */
+"minute##x1" = "минутa";
+
+/* Minute, ending in 2 */
+"minute##x2" = "минуты";
+
+/* Minute, ending in 3 */
+"minute##x3" = "минуты";
+
+/* Minute, ending in 4 */
+"minute##x4" = "минуты";
 
 /* Second, singular */
-"second" = "second";
+"second" = "секунда";
 
 /* Second, plural */
-"second##plural" = "seconds";
+"second##plural" = "секунд";
+
+/* Second, ending in 1 */
+"second##x1" = "секундa";
+
+/* Second, ending in 2 */
+"second##x2" = "секунды";
+
+/* Second, ending in 3 */
+"second##x3" = "секунды";
+
+/* Second, ending in 4 */
+"second##x4" = "секунды";

@@ -3,7 +3,9 @@
  
  The translation follows few simple rules
  1) "key" is used as key for the singular form and as the final fallback
- 2) "key##plural" is used for values above 1 as the first fallback (if 3 is not there)
+ 2) "key##plural" is used for values above 1 as the first fallback (if 3 or 4 are not there)
+ 3) "key##x{value}" is used for values above 1 with the results of number % 10,
+ i.e the last digit of the number, for example with count 21 minutes, this key would be "minute##x1"
  3) "key##{value}" is the first key that is checked, for example "minute##3"
  can be the key for "minutes" as that goes along with count 3
  

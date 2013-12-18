@@ -165,11 +165,23 @@
     NSString *testKey = [NSString stringWithFormat:@"%@##%lu", key, labs(count)];
     NSString *value = NSDateComponentsHNExtensionsString(testKey, nil);
     
-    if (labs(count) > 1 && [value isEqualToString:testKey]) {
-        testKey = [NSString stringWithFormat:@"%@##plural", key];
-        value = NSDateComponentsHNExtensionsString(testKey, nil);
+    // Different plural forms
+    if (labs(count) > 1) {
+        // Ending in...
+        if ([value isEqualToString:testKey]) {
+            NSUInteger lastDigit = labs(count % 10);
+            testKey = [NSString stringWithFormat:@"%@##x%lu", key, (unsigned long)lastDigit];
+            value = NSDateComponentsHNExtensionsString(testKey, nil);
+        }
+        
+        // Plural if > 1
+        if ([value isEqualToString:testKey]) {
+            testKey = [NSString stringWithFormat:@"%@##plural", key];
+            value = NSDateComponentsHNExtensionsString(testKey, nil);
+        }
     }
     
+    // Singular
     if ([value isEqualToString:testKey]) {
         value = NSDateComponentsHNExtensionsString(key, nil);
     }
