@@ -9,6 +9,8 @@
  3) "key##{value}" is the first key that is checked, for example "minute##3"
  can be the key for "minutes" as that goes along with count 3
  
+ Translated by Simon Gustavsson
+ 
  The MIT License (MIT)
 
  Copyright (c) 2013 Henri Normak
@@ -33,43 +35,43 @@
 */
 
 /* Year, singular */
-"year" = "year";
+"year" = "år";
 
 /* Year, plural */
-"year##plural" = "years";
+"year##plural" = "år";
 
 /* Month, singular */
-"month" = "month";
+"month" = "måned";
 
 /* Month, plural */
-"month##plural" = "month";
+"month##plural" = "måneder";
 
 /* Week, singular */
-"week" = "week";
+"week" = "uke";
 
 /* Week, plural */
-"week##plural" = "weeks";
+"week##plural" = "uker";
 
 /* Day, singular */
-"day" = "day";
+"day" = "dag";
 
 /* Day, plural */
-"day##plural" = "days";
+"day##plural" = "dager";
 
 /* Hour, singular */
-"hour" = "hour";
+"hour" = "time";
 
 /* Hour, plural */
-"hour##plural" = "hours";
+"hour##plural" = "timer";
 
 /* Minute, singular */
-"minute" = "minute";
+"minute" = "minutt";
 
 /* Minute, plural */
-"minute##plural" = "minutes";
+"minute##plural" = "minutter";
 
 /* Second, singular */
-"second" = "second";
+"second" = "sekund";
 
 /* Second, plural */
-"second##plural" = "seconds";
+"second##plural" = "sekunder";
