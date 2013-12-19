@@ -3,11 +3,13 @@
  
  The translation follows few simple rules
  1) "key" is used as key for the singular form and as the final fallback
- 2) "key##plural" is used for values above 1 as the first fallback (if 3 or 4 are not there)
+ 2) "key##plural" is used for values above 1 as the first fallback (if 3 is not there)
  3) "key##x{value}" is used for values above 1 with the results of number % 10,
  i.e the last digit of the number, for example with count 21 minutes, this key would be "minute##x1"
  3) "key##{value}" is the first key that is checked, for example "minute##3"
  can be the key for "minutes" as that goes along with count 3
+
+ Translated by Thibaut Dutartre
  
  The MIT License (MIT)
 
@@ -33,34 +35,34 @@
 */
 
 /* Year, singular */
-"year" = "year";
+"year" = "année";
 
 /* Year, plural */
-"year##plural" = "years";
+"year##plural" = "années";
 
 /* Month, singular */
-"month" = "month";
+"month" = "mois";
 
 /* Month, plural */
-"month##plural" = "months";
+"month##plural" = "mois";
 
 /* Week, singular */
-"week" = "week";
+"week" = "semaine";
 
 /* Week, plural */
-"week##plural" = "weeks";
+"week##plural" = "semaines";
 
 /* Day, singular */
-"day" = "day";
+"day" = "jour";
 
 /* Day, plural */
-"day##plural" = "days";
+"day##plural" = "jours";
 
 /* Hour, singular */
-"hour" = "hour";
+"hour" = "heure";
 
 /* Hour, plural */
-"hour##plural" = "hours";
+"hour##plural" = "heures";
 
 /* Minute, singular */
 "minute" = "minute";
@@ -69,7 +71,7 @@
 "minute##plural" = "minutes";
 
 /* Second, singular */
-"second" = "second";
+"second" = "seconde";
 
 /* Second, plural */
-"second##plural" = "seconds";
+"second##plural" = "secondes";
