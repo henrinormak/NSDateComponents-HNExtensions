@@ -77,7 +77,7 @@
             break;
 #endif
         default:
-            [NSException raise:NSInvalidArgumentException format:@"unit %lu is invalid", unit];
+            [NSException raise:NSInvalidArgumentException format:@"unit %lu is invalid", (unsigned long)unit];
             break;
     }
 }
@@ -115,7 +115,7 @@
             return self.nanosecond;
 #endif
         default:
-            [NSException raise:NSInvalidArgumentException format:@"unit %lu is invalid", unit];
+            [NSException raise:NSInvalidArgumentException format:@"unit %lu is invalid", (unsigned long)unit];
             break;
     }
     
