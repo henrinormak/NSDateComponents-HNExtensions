@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "NSDateComponents-HNExtensions"
-  s.version      = "0.1"
+  s.version      = "0.2"
   s.summary      = "A category on NSDateComponents allowing nice localizable string descriptions"
 
   s.description  = "Localizing units of time, such as years, months, days or hours can be tricky due to how plural forms are used in different languages. This category aims to help with that process by providing a way to get a nice localizable string out of a NSDateComponents object."
