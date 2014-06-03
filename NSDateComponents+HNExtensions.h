@@ -30,15 +30,6 @@
 
 @interface NSDateComponents (HNExtensions)
 
-// Use the same condition (negated) as NSDateComponents itself uses to enable these methods, this is to avoid a duplicate definition
-#if !(TARGET_OS_MAC && !(TARGET_OS_EMBEDDED || TARGET_OS_IPHONE)) && !NS_ENABLE_CALENDAR_NEW_API
-
-// The calendar and timeZone units are not valid for these methods.
-- (void)setValue:(NSInteger)value forComponent:(NSCalendarUnit)unit;
-- (NSInteger)valueForComponent:(NSCalendarUnit)unit;
-
-#endif
-
 // Creating date components from a time interval
 // Uses system calendar (i.e NSCalendar -autoupdatingCurrentCalendar)
 + (NSDateComponents *)components:(NSCalendarUnit)unit fromTimeInterval:(NSTimeInterval)interval NS_AVAILABLE(10_5, 2_0);;
@@ -49,5 +40,9 @@
 // fromUnit <= toUnit must be true, will be enforced by raising fromUnit
 // Uses strings from the table specified by NSDateComponentsHNExtensionsStringsTable
 - (NSString *)localizedStringFromUnit:(NSCalendarUnit)fromUnit toUnit:(NSCalendarUnit)toUnit;
+
+// The following two methods should only be used to support systems lower than 10.9 and 8.0
+- (void)hnextensions_setValue:(NSInteger)value forComponent:(NSCalendarUnit)unit NS_DEPRECATED(10_5, 10_9, 2_0, 8_0, "Use the native setValue:forComponent: instead");
+- (NSInteger)hnextensions_valueForComponent:(NSCalendarUnit)unit NS_DEPRECATED(10_5, 10_9, 2_0, 8_0, "Use the native getValueForComponent: instead");
 
 @end

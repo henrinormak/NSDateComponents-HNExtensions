@@ -26,11 +26,10 @@
 #import "NSDateComponents+HNExtensions.h"
 #define  NSDateComponentsHNExtensionsString(key, comment) NSLocalizedStringFromTable(key, NSDateComponentsHNExtensionsStringsTable, comment)
 
+// Ignore incomplete implementation warning, as it is likely caused by the potential swizzling needed
 @implementation NSDateComponents (HNExtensions)
 
-#if !(TARGET_OS_MAC && !(TARGET_OS_EMBEDDED || TARGET_OS_IPHONE)) && !NS_ENABLE_CALENDAR_NEW_API
-
-- (void)setValue:(NSInteger)value forComponent:(NSCalendarUnit)unit {
+- (void)hnextensions_setValue:(NSInteger)value forComponent:(NSCalendarUnit)unit {
     switch (unit) {
         case NSCalendarUnitEra:
             self.era = value;
@@ -82,7 +81,7 @@
     }
 }
 
-- (NSInteger)valueForComponent:(NSCalendarUnit)unit {
+- (NSInteger)hnextensions_valueForComponent:(NSCalendarUnit)unit {
     switch (unit) {
         case NSCalendarUnitEra:
             return self.era;
@@ -121,8 +120,6 @@
     
     return 0;
 }
-
-#endif
 
 + (NSDateComponents *)components:(NSCalendarUnit)unit fromTimeInterval:(NSTimeInterval)interval {
     NSDate *start = [NSDate date];
@@ -196,7 +193,7 @@
     NSMutableArray *components = [NSMutableArray array];
     NSCalendarUnit unit = fromUnit;
     while (unit <= toUnit) {
-        NSString *component = [self stringForComponent:unit count:[self valueForComponent:unit]];
+        NSString *component = [self stringForComponent:unit count:[self hnextensions_valueForComponent:unit]];
         if ([component length] > 0)
             [components addObject:component];
         
